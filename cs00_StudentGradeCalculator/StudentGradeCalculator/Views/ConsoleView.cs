@@ -31,11 +31,9 @@ namespace	StudentGradeCalculator.Views
 
 		public void	RunEventLoop()
 		{
-			DisplayMenu();
-
-			// Event loop
-			while (true)
+			while (true)	// Event loop
 			{
+				DisplayMenu();
 				Console.Write("\n> Choose an option: ");
 				// .KeyChar -> in case you press a key like "shift" that has more then one char
 				char input_opt = Console.ReadKey().KeyChar;
@@ -45,7 +43,6 @@ namespace	StudentGradeCalculator.Views
 				{
 					case '1':
 						// TODO: adding new studnet
-						
 						break ;
 					case '2':
 						// TODO: enter grade based on the student ID

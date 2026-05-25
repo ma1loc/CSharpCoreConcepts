@@ -1,6 +1,5 @@
 ﻿/*
 	System.Collections.Generic:
-
 */
 
 using StudentGradeCalculator.Views;
