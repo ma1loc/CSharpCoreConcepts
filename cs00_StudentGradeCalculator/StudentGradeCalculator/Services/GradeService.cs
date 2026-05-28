@@ -122,9 +122,24 @@ namespace	StudentGradeCalculator.Services
 		// TODO: KNOW THAT SHIT FOR WHAT ????
 		public async Task LoadAsync(string filePath)
 		{
+			// checking the file if it's exist
 			if (!File.Exists(filePath))
 				return;
+
+			/*
+				> ReadAllTextAsync reading the JSON text file
+					return a string format used in Deserialize.
+			*/
 			var text = await File.ReadAllTextAsync(filePath);
+
+			/*
+				> Deserialize<List<Student>>:
+					converting from plain-text JSON string back to
+					a List<Student> object that C# can work with.
+				> AddRange():
+					adding a mutiple student at once rather then
+					looping into single sutdent and add it using Add()
+			*/
 			var students = JsonSerializer.Deserialize<List<Student>>(text);
 			if (students != null)
 				_students.AddRange(students);
