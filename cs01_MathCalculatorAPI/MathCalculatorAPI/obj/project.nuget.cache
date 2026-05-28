@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "kVyDdsNtZHk=",
+  "success": true,
+  "projectFilePath": "/home/ma1loc/Desktop/workspace/C_Sharp_core-concepts/cs01_MathCalculatorAPI/MathCalculatorAPI/MathCalculatorAPI.csproj",
+  "expectedPackageFiles": [
+    "/home/ma1loc/.nuget/packages/microsoft.aspnetcore.openapi/10.0.8/microsoft.aspnetcore.openapi.10.0.8.nupkg.sha512",
+    "/home/ma1loc/.nuget/packages/microsoft.openapi/2.0.0/microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
