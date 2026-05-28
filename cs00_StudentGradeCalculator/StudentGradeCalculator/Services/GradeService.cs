@@ -1,4 +1,5 @@
 
+using StudentGradeCalculator.Attributes;
 using StudentGradeCalculator.Models;
 using System.Text.Json;
 
@@ -11,17 +12,34 @@ namespace	StudentGradeCalculator.Services
 		private readonly List<Student> _students = new();
 
 		/*
-			Queue<GradeEntry> stores snapshots of added grades
+			Stack<GradeEntry> stores snapshots of added grades
 		    	used by the Undo feature [6] to remove the last
 				grade entry.
 		*/
-		private readonly Queue<GradeEntry> _undoQueue = new();
+		private readonly Stack<GradeEntry> _undoStack = new();
 
 		public void AddStudent(Student student)
 		{
 			_students.Add(student);
 		}
 
+		public void UndoLastGrade()
+		{
+			if (_undoStack.Count == 0)
+				return ;
+
+			var lastGrade = _undoStack.Pop();
+			foreach (var student in _students)
+			{
+				if (student.Id == lastGrade.studentId)
+				{
+					student.Grades.Remove(lastGrade.subject);	// remove besed on the key
+					break ;
+				}
+			}
+		}
+
+		[ValidGrade(0, 20)]
 		public void AddGrade(string studentId, string subject, double score)
 		{
 			/*
@@ -31,7 +49,7 @@ namespace	StudentGradeCalculator.Services
 			// var student = _students.FirstOrDefault(s => s.Id == studentId);
 			// for (int i = 0; i < _students.Count; i++)	// old way
 			
-			Student student = null;
+			Student? student = null;
 			foreach (var s in _students)
 			{
 				// 's' is a placeholder for every student element
@@ -49,10 +67,10 @@ namespace	StudentGradeCalculator.Services
 			student.Grades[subject] = score;
 
 			/*
-				save the Grade intry in the queue(FIFO)
-				.Enqueue -> build-in method adding item to the queue that all
+				save the Grade intry in the queue(LIFO)
+				.Push -> build-in method adding item to the Stack that all
 			*/
-			_undoQueue.Enqueue(new GradeEntry(subject, score));
+			_undoStack.Push(new GradeEntry(studentId, subject, score));
 		}
 
 		public IEnumerable<Student> GetPassingStudents()
@@ -71,7 +89,6 @@ namespace	StudentGradeCalculator.Services
 				yield return student;
 			}
 		}
-
 
 		/*
 			NOTE:
@@ -100,6 +117,17 @@ namespace	StudentGradeCalculator.Services
 				> WriteAllTextAsync: build-in method write text to file
 			*/
 			await File.WriteAllTextAsync(filePath, text);
+		}
+
+		// TODO: KNOW THAT SHIT FOR WHAT ????
+		public async Task LoadAsync(string filePath)
+		{
+			if (!File.Exists(filePath))
+				return;
+			var text = await File.ReadAllTextAsync(filePath);
+			var students = JsonSerializer.Deserialize<List<Student>>(text);
+			if (students != null)
+				_students.AddRange(students);
 		}
 	}
 }

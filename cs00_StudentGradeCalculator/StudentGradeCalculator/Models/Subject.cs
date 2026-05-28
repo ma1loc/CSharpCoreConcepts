@@ -1,5 +1,6 @@
 
 /*
+	Not used
 */
 namespace StudentGradeCalculator.Models
 {

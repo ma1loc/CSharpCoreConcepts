@@ -1,18 +1,19 @@
-﻿/*
-	System.Collections.Generic:
-*/
+﻿using StudentGradeCalculator.Views;
+using StudentGradeCalculator.Services;
+using StudentGradeCalculator.Controllers;
 
-using StudentGradeCalculator.Views;
-
-namespace Program
+namespace StudentGradeCalculator
 {
-	class Program
-	{
-		static void Main()  // Entry Point
-		{
-			var view = new ConsoleView();
-			view.RunEventLoop();
-		}
-	}
-}
+    class Program
+    {
+		static async Task Main()
+        {
+            var gradeService = new GradeService();
+            var controller = new GradeController(gradeService);
+            var view = new ConsoleView(controller);
 
+			await controller.LoadData("students.json");
+            await view.RunEventLoop();
+        }
+    }
+}

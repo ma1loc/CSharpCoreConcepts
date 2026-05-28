@@ -7,6 +7,8 @@ namespace StudentGradeCalculator.Services
 	{
 		void	AddStudent(Student student);
 		void	AddGrade(string studentId, string subject, double score);
+		void	UndoLastGrade();
+
 
 		/*	> yield:
 			make the return stream rather then return all the list at once
@@ -42,6 +44,8 @@ namespace StudentGradeCalculator.Services
 					> Serialization: converting from an object to JSON or XML
 					> Deserialization: is the opposite of Serialization, From JSON or XML to Object
 		*/
-		Task   SaveAsync(string filePath);
+		Task	SaveAsync(string filePath);
+
+		Task	LoadAsync(string filePath);
 	}
 }

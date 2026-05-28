@@ -62,7 +62,7 @@ namespace	StudentGradeCalculator.Models
 							Student.Name = "data"
 				*/
 				if (string.IsNullOrWhiteSpace(value))
-					throw new ArgumentException("[-]Error: Student name cannot be empty or spaces.");
+					throw new ArgumentException("[-] Error: Student name cannot be empty or spaces.");
 				_name = value;
 			}
 		}
@@ -76,7 +76,7 @@ namespace	StudentGradeCalculator.Models
 			init
 			{
 				if (string.IsNullOrWhiteSpace(value))
-					throw new ArgumentException("[-]Error: Student ID cannot be empty or spaces.");
+					throw new ArgumentException("[-] Error: Student ID cannot be empty or spaces.");
 				_id = value;
 			}
 		}
