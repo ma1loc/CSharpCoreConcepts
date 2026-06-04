@@ -64,15 +64,14 @@ namespace	MathCalculatorAPI.Services
 
 				_history.Add(calculation);
 
-				/*
-					what the fuck is the return syntax look like this ????
-				*/
+				
 				return calculation;
 			}
 			else
 				throw new ArgumentException("Invalid operation, bro.");
 		}
 
+		// TODO: think i have to use the yield retur here, becouse it's a list ???, what is the best practice here
 		public async Task<IEnumerable<CalculationResult>> GetHistoryAsync()
 		{
 			return _history;

@@ -3,11 +3,11 @@ namespace MathCalculatorAPI.Models
 {
 	/*
 		> Guid:
-			Globally Unique Identifier it's a build in struct
+			Globally Unique Identifier it's a built-in struct
 			generate a Unique ID
 
 		> DateTime:
-			a build in strcut grab the current time
+			a built-in strcut grab the current time
 	*/
 
 	/*
@@ -26,4 +26,5 @@ namespace MathCalculatorAPI.Models
 		double	Result,
 		DateTime	CreatedAt
 	);
+	var (a, b, c, d, d) = CalculationResult;
 }

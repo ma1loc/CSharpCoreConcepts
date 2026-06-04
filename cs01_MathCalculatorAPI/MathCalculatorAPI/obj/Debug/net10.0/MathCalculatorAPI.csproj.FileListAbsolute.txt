@@ -1,0 +1,9 @@
+/home/ma1loc/Desktop/workspace/C_Sharp_core-concepts/cs01_MathCalculatorAPI/MathCalculatorAPI/obj/Debug/net10.0/MathCalculatorAPI.csproj.AssemblyReference.cache
+/home/ma1loc/Desktop/workspace/C_Sharp_core-concepts/cs01_MathCalculatorAPI/MathCalculatorAPI/obj/Debug/net10.0/rpswa.dswa.cache.json
+/home/ma1loc/Desktop/workspace/C_Sharp_core-concepts/cs01_MathCalculatorAPI/MathCalculatorAPI/obj/Debug/net10.0/MathCalculatorAPI.GeneratedMSBuildEditorConfig.editorconfig
+/home/ma1loc/Desktop/workspace/C_Sharp_core-concepts/cs01_MathCalculatorAPI/MathCalculatorAPI/obj/Debug/net10.0/MathCalculatorAPI.AssemblyInfoInputs.cache
+/home/ma1loc/Desktop/workspace/C_Sharp_core-concepts/cs01_MathCalculatorAPI/MathCalculatorAPI/obj/Debug/net10.0/MathCalculatorAPI.AssemblyInfo.cs
+/home/ma1loc/Desktop/workspace/C_Sharp_core-concepts/cs01_MathCalculatorAPI/MathCalculatorAPI/obj/Debug/net10.0/MathCalculatorAPI.csproj.CoreCompileInputs.cache
+/home/ma1loc/Desktop/workspace/C_Sharp_core-concepts/cs01_MathCalculatorAPI/MathCalculatorAPI/obj/Debug/net10.0/MathCalculatorAPI.MvcApplicationPartsAssemblyInfo.cs
+/home/ma1loc/Desktop/workspace/C_Sharp_core-concepts/cs01_MathCalculatorAPI/MathCalculatorAPI/obj/Debug/net10.0/MathCalculatorAPI.MvcApplicationPartsAssemblyInfo.cache
+/home/ma1loc/Desktop/workspace/C_Sharp_core-concepts/cs01_MathCalculatorAPI/MathCalculatorAPI/obj/Debug/net10.0/MathCalculatorAPI.sourcelink.json
