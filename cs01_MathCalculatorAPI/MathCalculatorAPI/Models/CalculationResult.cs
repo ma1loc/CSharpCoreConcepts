@@ -26,5 +26,4 @@ namespace MathCalculatorAPI.Models
 		double	Result,
 		DateTime	CreatedAt
 	);
-	var (a, b, c, d, d) = CalculationResult;
 }

@@ -54,7 +54,9 @@ namespace MathCalculatorAPI.Middleware
 		private readonly RequestDelegate _next;
 
 		/*
-			TODO: Constractor for what ???
+			> ErrorHandlingMiddleware Constructor:
+				it's used by the ASP.NET Core to inject RequestDelegate
+				that represent the next middleware
 		*/
 		public ErrorHandlingMiddleware(RequestDelegate next)
 		{
@@ -63,8 +65,17 @@ namespace MathCalculatorAPI.Middleware
 
 		/*
 			> Invoke:
-			
+				It's a method ASP.NET called in every Request
 		*/
+		public async Task InvokeAsync(HttpContext context)
+		{
+			// Request Logic check
+			Console.WriteLine(">> Processing IN-Coming in Custom Middleware");
 
+			await _next(context);
+
+			// Response More Logic check
+			Console.WriteLine("<< Processing OUT-Coming in Custom Middleware");
+		}
 	}
 }

@@ -7,7 +7,7 @@ namespace	MathCalculatorAPI.Services
 	public class CalculatorService : ICalculatorService
 	{
 		// NOTE: Private Field can not use { get; set; }
-		private readonly List<CalculationResult> _history = new();
+		private readonly List<CalculationResult> _history = new();	// Database
 
 		public async Task<CalculationResult> CalculateAsync(CalculationRequest request)
 		{
